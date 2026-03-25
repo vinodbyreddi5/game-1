@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-neon-pink: #ff00ff;
+  --color-neon-blue: #00f2ff;
+  --color-neon-green: #39ff14;
+  --color-neon-purple: #bc13fe;
+  
+  --shadow-neon-pink: 0 0 5px #ff00ff, 0 0 20px #ff00ff;
+  --shadow-neon-blue: 0 0 5px #00f2ff, 0 0 20px #00f2ff;
+  --shadow-neon-green: 0 0 5px #39ff14, 0 0 20px #39ff14;
+}
+
+@layer base {
+  body {
+    @apply bg-black text-white overflow-hidden;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+.font-digital {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.glitch {
+  position: relative;
+  text-shadow: 0.05em 0 0 rgba(255, 0, 255, 0.75),
+    -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+    0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  animation: glitch 500ms infinite;
+}
+
+.glitch span {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.glitch span:first-child {
+  animation: glitch 650ms infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  transform: translate(-0.025em, -0.0125em);
+  opacity: 0.8;
+}
+
+.glitch span:last-child {
+  animation: glitch 375ms infinite;
+  clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
+  transform: translate(0.0125em, 0.025em);
+  opacity: 0.8;
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: 0.05em 0 0 rgba(255, 0, 255, 0.75),
+      -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
+      -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  14% {
+    text-shadow: 0.05em 0 0 rgba(255, 0, 255, 0.75),
+      -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
+      -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  15% {
+    text-shadow: -0.05em -0.025em 0 rgba(255, 0, 255, 0.75),
+      0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+      -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  49% {
+    text-shadow: -0.05em -0.025em 0 rgba(255, 0, 255, 0.75),
+      0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+      -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  50% {
+    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 255, 0.75),
+      0.05em 0 0 rgba(0, 255, 0, 0.75),
+      0 -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  99% {
+    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 255, 0.75),
+      0.05em 0 0 rgba(0, 255, 0, 0.75),
+      0 -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  100% {
+    text-shadow: -0.025em 0 0 rgba(255, 0, 255, 0.75),
+      -0.025em -0.025em 0 rgba(0, 255, 0, 0.75),
+      -0.025em -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+}
+
+.neon-border-pink {
+  border: 2px solid var(--color-neon-pink);
+  box-shadow: var(--shadow-neon-pink);
+}
+
+.neon-border-blue {
+  border: 2px solid var(--color-neon-blue);
+  box-shadow: var(--shadow-neon-blue);
+}
+
+.neon-text-pink {
+  color: var(--color-neon-pink);
+  text-shadow: var(--shadow-neon-pink);
+}
+
+.neon-text-blue {
+  color: var(--color-neon-blue);
+  text-shadow: var(--shadow-neon-blue);
+}
+
+.neon-text-green {
+  color: var(--color-neon-green);
+  text-shadow: var(--shadow-neon-green);
+}
